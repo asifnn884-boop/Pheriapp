@@ -1,0 +1,20 @@
+name: pheri_app
+description: A simple app to track Pheri work: morning and evening entries, stock, scrap, and reports
+publish_to: "none" # Package publish نہیں کرنا
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.19.0 <3.0.0" # Flutter SDK کے مطابق
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
