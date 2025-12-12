@@ -2,16 +2,28 @@ name: Build APK
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main" ]  # main branch میں push پر trigger ہوگا
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
+      # Step 1: Repository کو checkout کریں
       - uses: actions/checkout@v1
+
+      # Step 2: Flutter setup
       - uses: subosito/flutter-action@v1
+        with:
+          flutter-version: '3.13.0'  # اپنے Flutter version کے مطابق
+
+      # Step 3: Dependencies install کریں
       - run: flutter pub get
+
+      # Step 4: APK build کریں
       - run: flutter build apk --release
+
+      # Step 5: APK artifact کے طور پر upload کریں
       - uses: actions/upload-artifact@v1
         with:
           name: release-apk
