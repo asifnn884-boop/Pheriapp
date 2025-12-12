@@ -2,7 +2,7 @@ name: Build APK
 
 on:
   push:
-    branches: [ "main" ]  # main branch میں push پر trigger ہوگا
+    branches: [ "main" ]  # main branch میں push ہونے پر run ہوگا
 
 jobs:
   build:
@@ -10,7 +10,7 @@ jobs:
 
     steps:
       # Step 1: Repository کو checkout کریں
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       # Step 2: Flutter setup
       - uses: subosito/flutter-action@v2
@@ -23,8 +23,8 @@ jobs:
       # Step 4: APK build کریں
       - run: flutter build apk --release
 
-      # Step 5: APK artifact کے طور پر upload کریں
-      - uses: actions/upload-artifact@v2
+      # Step 5: APK artifact کے طور پر upload کریں (v3)
+      - uses: actions/upload-artifact@v3
         with:
           name: release-apk
           path: build/app/outputs/apk/release/app-release.apk
