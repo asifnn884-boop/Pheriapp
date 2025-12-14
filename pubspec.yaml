@@ -8,8 +8,7 @@ environment:
   sdk: ">=2.19.0 <3.0.0"
 
 dependencies:
-  flutterflutter_test:
-    sdk: flutter
+  flutterflutter_test: sdk: flutter
   cupertino_icons: ^1.0.2
   sqflite: ^2.2.8+4
   path_provider: ^2.0.15
