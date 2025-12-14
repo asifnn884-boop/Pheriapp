@@ -22,7 +22,7 @@ jobs:
 
       # Install dependencies using flutter pub
       - name: Install dependencies
-        run: flutter pub get
+        run:. pub get
 
       # Build the APK in release mode
       - name: Build APK
